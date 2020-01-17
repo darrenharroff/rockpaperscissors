@@ -20,6 +20,7 @@
   position: relative;
   width: 100%;
   height: 60%;
+  min-height: 375px;
   justify-content: center;
 }
 .score_player, .score_computer {
@@ -27,42 +28,61 @@
   display: flex;
   flex-direction: column;
   color: white;
-  padding: 3em 15vw;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  position: relative;
+}
+.score_player_label, .score_computer_label {
+  position: absolute;
+  top: 10%;
 }
 .score_player_score, .score_computer_score {
-  margin-top: 1em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 4rem;
 }
 .score_player {
-  background-color: #b35a5a;
+  background-color: #d4d4d4;
   align-items: flex-end;
+  color: black;
+}
+.score_player_label {
+  right: 20%;
+}
+.score_player_score {
+  right: 20%;
 }
 .score_player .icons {
-  left: 30%;
+  right: 20%;
 }
 .score_computer {
-  background-color: #6060ad;
+  background-color: #7c7c7c;
   align-items: flex-start;
 }
+.score_computer_label {
+  left: 20%;
+}
+.score_computer_score {
+  left: 20%;
+}
 .score_computer .icons {
-  right: 30%;
+  left: 20%;
   transform: scaleX(-1);
 }
 .score .icons {
   position: absolute;
-  bottom: 15%;
+  bottom: 10%;
 }
 
 .response {
   width: 100%;
   height: 5%;
+  min-height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #303030;
   font-size: 2rem;
-  padding: 1em;
   background-color: #fff;
 }
 .response_text {
@@ -72,6 +92,7 @@
 .buttons {
   width: 100%;
   height: 35%;
+  min-height: 150px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
