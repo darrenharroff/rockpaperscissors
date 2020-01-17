@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 150ms ease;
+}
+
+.main-content {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.score {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 60%;
+  justify-content: center;
+  &_player,
+  &_computer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 3em 15vw;
+    font-size: 1.5rem;
+    &_score {
+      margin-top: 1em;
+      font-size: 4rem;
+    }
+  }
+  &_player {
+    background-color: rgb(179, 90, 90);
+    align-items: flex-end;
+    .icons {
+      left: 30%;
+    }
+  }
+  &_computer {
+    background-color: rgb(96, 96, 173);
+    align-items: flex-start;
+    .icons {
+      right: 30%;
+      transform: scaleX(-1);
+    }
+  }
+  .icons {
+    position: absolute;
+    bottom: 15%;
+  }
+}
+
+.response {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(48, 48, 48);
+  font-size: 2rem;
+  padding: 1em;
+  background-color: #fff;
+  &_text {
+    font-weight: 100;
+  }
+}
+
+.buttons {
+  width: 100%;
+  height: 35%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  &_button {
+    border: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    &.rock {
+      background-color: rgb(212, 193, 108);
+    }
+    &.paper {
+      background-color: #fff;
+      color: rgb(48, 48, 48);
+    }
+    &.scissors {
+      background-color: rgb(136, 122, 122);
+    }
+    &:hover {
+      filter: brightness(95%);
+    }
+    &:active {
+      filter: brightness(90%);
+    }
+  }
+}
