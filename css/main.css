@@ -16,62 +16,52 @@
 }
 
 .score {
-  display: flex;
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4em;
   width: 100%;
   height: 60%;
   min-height: 375px;
-  justify-content: center;
 }
 .score_player, .score_computer {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-size: 1.3rem;
-  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
 }
 .score_player_label, .score_computer_label {
-  position: absolute;
-  top: 10%;
+  font-size: 2.5rem;
+  text-align: center;
+  grid-row: span 2;
 }
 .score_player_score, .score_computer_score {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 4rem;
 }
+.score_player .icons, .score_computer .icons {
+  opacity: 0.3;
+}
 .score_player {
-  background-color: #d4d4d4;
-  align-items: flex-end;
-  color: black;
+  color: #197abb;
+}
+.score_player * {
+  justify-self: flex-end;
 }
 .score_player_label {
-  right: 20%;
-}
-.score_player_score {
-  right: 20%;
-}
-.score_player .icons {
-  right: 20%;
+  transform: rotate(-90deg);
 }
 .score_computer {
-  background-color: #7c7c7c;
-  align-items: flex-start;
+  color: #ca2a2a;
+}
+.score_computer * {
+  justify-self: flex-start;
 }
 .score_computer_label {
-  left: 20%;
-}
-.score_computer_score {
-  left: 20%;
+  transform: rotate(90deg);
 }
 .score_computer .icons {
-  left: 20%;
   transform: scaleX(-1);
-}
-.score .icons {
-  position: absolute;
-  bottom: 10%;
 }
 
 .response {
@@ -93,29 +83,35 @@
   width: 100%;
   height: 35%;
   min-height: 150px;
+  max-width: 950px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 1em;
 }
 .buttons_button {
   border: none;
-  font-size: 2rem;
+  border-radius: 1000px;
+  font-size: 1.5rem;
   text-transform: uppercase;
-  color: white;
-  cursor: pointer;
-}
-.buttons_button.rock {
-  background-color: #d4c16c;
-}
-.buttons_button.paper {
-  background-color: #fff;
+  background-color: #f8f8f8;
   color: #303030;
-}
-.buttons_button.scissors {
-  background-color: #887a7a;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  max-height: 250px;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
 }
 .buttons_button:hover {
   filter: brightness(95%);
 }
 .buttons_button:active {
   filter: brightness(90%);
+}
+.buttons_button:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
