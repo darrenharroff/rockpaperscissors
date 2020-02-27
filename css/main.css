@@ -7,10 +7,9 @@
 
 .main-content {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   flex-direction: column;
   font-family: sans-serif;
 }
@@ -18,7 +17,6 @@
 .score {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4em;
   width: 100%;
   height: 60%;
   min-height: 375px;
@@ -32,15 +30,26 @@
   align-items: center;
 }
 .score_player_label, .score_computer_label {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
   grid-row: span 2;
+}
+@media (min-width: 1000px) {
+  .score_player_label, .score_computer_label {
+    font-size: 3rem;
+  }
 }
 .score_player_score, .score_computer_score {
   font-size: 4rem;
 }
 .score_player .icons, .score_computer .icons {
   opacity: 0.3;
+  width: 75px;
+}
+@media (min-width: 1000px) {
+  .score_player .icons, .score_computer .icons {
+    width: 150px;
+  }
 }
 .score_player {
   color: #197abb;
@@ -51,6 +60,12 @@
 .score_player_label {
   transform: rotate(-90deg);
 }
+.score_player_score {
+  margin-right: 15px;
+}
+.score_player .icons {
+  margin-right: 10px;
+}
 .score_computer {
   color: #ca2a2a;
 }
@@ -60,8 +75,12 @@
 .score_computer_label {
   transform: rotate(90deg);
 }
+.score_computer_score {
+  margin-left: 15px;
+}
 .score_computer .icons {
   transform: scaleX(-1);
+  margin-left: 10px;
 }
 
 .response {
@@ -82,7 +101,6 @@
 .buttons {
   width: 100%;
   height: 35%;
-  min-height: 150px;
   max-width: 950px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -92,7 +110,7 @@
 .buttons_button {
   border: none;
   border-radius: 1000px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-transform: uppercase;
   background-color: #f8f8f8;
   color: #303030;
@@ -114,4 +132,9 @@
 .buttons_button:focus {
   outline: none;
   -webkit-tap-highlight-color: transparent;
+}
+@media (min-width: 1000px) {
+  .buttons_button {
+    font-size: 1.5rem;
+  }
 }
